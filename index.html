@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Scholarship Form</title>
+        <link rel="stylesheet" type="text/css" href="../Css/main.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    </head>
+    <body>
+        <div class="card">
+        <div class="tab-header">
+            <div class="active" data-tab="personal">Personal Information</div>
+            <div data-tab="marks">Marks</div>
+            <div data-tab="income">Income Details</div>
+        </div>
+        
+        <form id="scholarshipForm" novalidate="novalidate">
+            <div class="tab-content">
+                <!-- Personal Information Tab -->
+                <div id="personalTab" class="tab active">
+                    <div class="form-row">
+                        <div class="form-label">Full Name<span style="color:red;">*</span></div>
+                        <div class="form-input">
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                            <div id="fullNameError" class="error-message"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-label">Age<span style="color:red;">*</span></div>
+                        <div class="form-input">
+                            <input type="number" id="age" name="age" placeholder="Enter your age">
+                            <div id="ageError" class="error-message"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-label">Father/Mother Name<span style="color:red;">*</span></div>
+                        <div class="form-input">
+                            <input type="text" id="parentName" name="parentName" placeholder="Enter parent name">
+                            <div id="parentNameError" class="error-message"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-label">Occupation<span style="color:red;">*</span></div>
+                        <div class="form-input">
+                            <input type="text" id="occupation" name="occupation" placeholder="Enter occupation">
+                            <div id="occupationError" class="error-message"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-label">Address<span style="color:red;">*</span></div>
+                        <div class="form-input">
+                            <textarea id="address" name="address" placeholder="Enter your address"></textarea>
+                            <div id="addressError" class="error-message"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-label">Relationship<span style="color:red;">*</span></div>
+                        <div class="form-input">
+                            <input type="text" id="relationship" name="relationship" placeholder="Enter relationship">
+                            <div id="relationshipError" class="error-message"></div>
+                        </div>
+                    </div>
+                    <button type="button" id="nextToMarks" class="submit-btn">Next</button>
+                </div>
+
+                <!-- Marks Tab -->
+                <div id="marksTab" class="tab">
+                    <table id="subjectsTable">
+                        <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Subject</th>
+                                <th>Total</th>
+                                <th>Score</th>
+                                <th>%</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dynamic rows will be added here -->
+                        </tbody>
+                    </table>
+                    
+                    <button type="button" id="addSubjectBtn" class="add-subject-btn">
+                        + Add Subject
+                    </button>
+                    <div id="subjectsError" class="error-message"></div>
+                    
+                    <div class="form-row">
+                        <div style="width:50%; text-align:left;">
+                            <button type="button" id="backToPersonal" class="submit-btn">Back</button>
+                        </div>
+                        <div style="width:50%; text-align:right;">
+                            <button type="button" id="nextToIncome" class="submit-btn">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Income Details Tab -->
+                <div id="incomeTab" class="tab">
+                    <div class="form-row">
+                        <div class="form-label">Annual Income<span style="color:red;">*</span></div>
+                        <div class="form-input">
+                            <input type="text" id="annualIncome" name="annualIncome" placeholder="Enter annual income">
+                            <div id="annualIncomeError" class="error-message"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-label">Requisition Amount<span style="color:red;">*</span></div>
+                        <div class="form-input">
+                            <input type="number" id="requisitionAmount" name="requisitionAmount" placeholder="Enter requisition amount">
+                            <div id="requisitionAmountError" class="error-message"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-label">Nature Of Requisition<span style="color:red;">*</span></div>
+                        <div class="form-input">
+                            <input type="text" id="natureRequisition" name="natureRequisition" placeholder="Enter nature of requisition">
+                            <div id="natureRequisitionError" class="error-message"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-label">Fund Amount<span style="color:red;">*</span></div>
+                        <div class="form-input">
+                            <input type="number" id="fundAmount" name="fundAmount" placeholder="Enter fund amount">
+                            <div id="fundAmountError" class="error-message"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div style="width:50%; text-align:left;">
+                            <button type="button" id="backToMarks" class="submit-btn">Back</button>
+                        </div>
+                        <div style="width:50%; text-align:right;">
+                            <button type="submit" class="submit-btn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <script src="../Js/main.js"></script>
+    </body>

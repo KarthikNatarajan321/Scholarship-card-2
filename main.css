@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+   body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    }
+
+    .card {
+        background-color: white;
+        width: 100%;
+        max-width: 800px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .tab-header {
+        display: flex;
+        background-color: #223c68;
+        color: white;
+    }
+
+    .tab-header div {
+        flex: 1;
+        padding: 15px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        opacity: 0.5;
+    }
+
+    .tab-header div.active {
+        opacity: 1;
+        background-color: #1a2f52;
+    }
+
+    .tab-content {
+        padding: 20px;
+    }
+
+    .tab {
+        display: none;
+    }
+
+    .tab.active {
+        display: block;
+    }
+
+    .form-row {
+        display: flex;
+        margin-bottom: 15px;
+        gap: 20px;
+    }
+
+    .form-label {
+        width: 30%;
+        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-weight: 500;
+    }
+
+    .form-input {
+        width: 70%;
+        position: relative;
+    }
+
+    .form-input input, 
+    .form-input textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: border-color 0.3s ease;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 0.8em;
+        margin-top: 5px;
+    }
+
+    input.error, 
+    textarea.error {
+        border-color: red;
+    }
+
+    .submit-btn {
+        background-color: #223c68;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+        background-color: #1a2f52;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin: 20px 0;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    thead {
+        background-color: #223c68;
+        color: white;
+    }
+    
+    th, td {
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    th {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.9em;
+    }
+    
+    tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    
+    tbody tr:hover {
+        background-color: #f1f1f1;
+        transition: background-color 0.3s ease;
+    }
+    
+    .remove-btn {
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .add-subject-btn {
+        background-color: #223c68;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+    .add-subject-btn:hover {
+        background-color: #1a2f52;
+    }
+    
+    .remove-btn:hover {
+        background-color: #ff3333;
+    }
+    
+    .subject-input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        text-align: center;
+    }
+    
+    .subject-input:focus {
+        outline: none;
+        border-color: #223c68;
+        box-shadow: 0 0 5px rgba(34,60,104,0.2);
+    }
+
+    .field-error {
+        color: red;
+        font-size: 12px;
+        margin-left: 5px;
+        display: block;
+    }
+
+    @media screen and (max-width: 600px) {
+        .form-row {
+            flex-direction: column;
+        }
+
+        .form-label, 
+        .form-input {
+            width: 100%;
+            text-align: left;
+        }
+
+        .form-label {
+            margin-bottom: 5px;
+            text-align: left;
+            justify-content: flex-start;
+        }
+
+        #subjects-table {
+            width: 100%;
+            overflow-x: auto;
+        }
+    }
